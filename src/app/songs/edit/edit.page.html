@@ -1,0 +1,32 @@
+<!--
+Iris Albrecht 902170
+Hakan Kucukel 1702362
+Antonin Venuti 1902162
+-->
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/tabs/songs"></ion-back-button>
+      </ion-buttons>
+      <ion-title>EDIT SONG</ion-title>
+    </ion-toolbar>
+  </ion-header>
+<ion-content>
+    <ion-list>
+      <ion-item>
+        <!-- [(ngModel)]="title"  bind angular model title to input-->
+        <ion-input type="text" placeholder="Title" name="title"  [(ngModel)]="song.title"  required></ion-input>
+      </ion-item>
+      <ion-item>
+          <!-- [(ngModel)]="title"  bind angular model title to input-->
+          <ion-input type="number" placeholder="Released" name="released"  [(ngModel)]="song.released"  required></ion-input>
+        </ion-item>
+        <ion-item>
+            <!-- [(ngModel)]="title"  bind angular model title to input-->
+            <ion-input type="text" placeholder="Singer" name="singer"  [(ngModel)]="song.singer"  required></ion-input>
+          </ion-item>
+      
+      <!-- (click) binds button click to login() function in login.page.ts file -->
+      <ion-button size="medium" expand="block">UPDATE</ion-button> 
+    </ion-list>
+  </ion-content>

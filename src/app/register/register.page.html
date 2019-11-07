@@ -1,0 +1,33 @@
+<!--
+Iris Albrecht 902170
+Hakan Kucukel 1702362
+Antonin Venuti 1902162
+-->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>REGISTER</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+      <ion-item>
+          <!-- [(ngModel)]="displayName"  bind angular model displayName to input-->
+          <ion-input type="text" placeholder="displayName" name="displayName"  [(ngModel)]="displayName"  required></ion-input>
+        </ion-item>
+    <ion-item>
+      <!-- [(ngModel)]="email"  bind angular model email to input-->
+      <ion-input type="email" placeholder="Email" name="Email"  [(ngModel)]="email"  required></ion-input>
+    </ion-item>
+    <ion-item>
+      <!-- [(ngModel)]="password"  bind angular model password to input-->
+      <ion-input type="password" placeholder="Password"  name="password" [(ngModel)]="password"  required></ion-input>
+    </ion-item>
+  </ion-list>
+<!-- (click) binds button click to login() function in login.page.ts file -->
+<ion-button expand="block" (click)="register()">REGISTER</ion-button>
+<ion-label color="danger" class="ion-text-center">{{errorMessage}}</ion-label>
+</ion-content>

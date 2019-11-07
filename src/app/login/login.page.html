@@ -1,0 +1,30 @@
+<!--
+Iris Albrecht 902170
+Hakan Kucukel 1702362
+Antonin Venuti 1902162
+-->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      LOGIN
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <!-- [(ngModel)]="username"  bind angular model username to input-->
+      <ion-input type="text" placeholder="Username" name="username"  [(ngModel)]="username"  required></ion-input>
+    </ion-item>
+    <ion-item>
+      <!-- [(ngModel)]="password"  bind angular model password to input-->
+      <ion-input type="password" placeholder="Password"  name="password" [(ngModel)]="password"  required></ion-input>
+    </ion-item>
+    <ion-item>
+    <!-- (click) binds button click to login() function in login.page.ts file -->
+    <ion-button size="medium" (click)="login()">SIGN IN</ion-button>
+    <ion-button size="medium" routerLink="/register" routerDirection="forward">REGISTER</ion-button>
+  </ion-item>
+  </ion-list>
+</ion-content>
