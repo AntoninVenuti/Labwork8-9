@@ -31,6 +31,11 @@ export class AppComponent {
       title: 'About',
       url: '/tabs/about',
       icon: 'information-circle'
+    },
+    {
+      title: 'Contact',
+      url: '/contact',
+      icon: 'call'
     }
   ];
 

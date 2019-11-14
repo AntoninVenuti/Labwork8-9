@@ -9,7 +9,8 @@ const routes: Routes = [
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
   { path: 'add-song', loadChildren: './songs/add/add.module#AddPageModule' },
-  { path: 'edit-song', loadChildren: './songs/edit/edit.module#EditPageModule' }
+  { path: 'edit-song', loadChildren: './songs/edit/edit.module#EditPageModule' },  { path: 'contact', loadChildren: './contact/contact.module#ContactPageModule' }
+
 ];
 @NgModule({
   imports: [
