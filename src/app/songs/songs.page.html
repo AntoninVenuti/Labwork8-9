@@ -8,7 +8,9 @@ Antonin Venuti 1902162
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>My Songs</ion-title>
+<!--<ion-title>My Songs</ion-title> -->
+    <!-- searchbar-->
+    <ion-searchbar (ionInput)="search()" [(ngModel)]="searchText"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
