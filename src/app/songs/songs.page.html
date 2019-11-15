@@ -10,7 +10,7 @@ Antonin Venuti 1902162
     </ion-buttons>
 <!--<ion-title>My Songs</ion-title> -->
     <!-- searchbar-->
-    <ion-searchbar (ionInput)="search()" [(ngModel)]="searchText"></ion-searchbar>
+    <ion-searchbar (ionChange)="search()" [(ngModel)]="searchText"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
