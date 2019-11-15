@@ -32,10 +32,18 @@ export class SongsPage implements OnInit {
   }
 
   search() {
-    // console.log(this.searchText);
-    if (this.searchText === null || this.firebaseSongs === null) {
-     return;
+     // console.log(this.searchText); // Debug only
+    if (this.searchText === null || this.searchText.length === 0 || this.firebaseSongs === null) {
+     // Nothing to search
+      this.songs = this.firebaseSongs;
+      return;
     }
-    this.songs = this.firebaseSongs.filter(song => song.title.indexOf(this.searchText) >= 0);
+    // Ignore case sensitivity convert to lowerCase
+    const searchText = this.searchText.toLowerCase();
+    // Search Song Title or Singer Name
+    this.songs = this.firebaseSongs.filter(song => {
+      // Search both song title and singer and ignore case
+        return song.title.toLowerCase().indexOf(searchText) >= 0 ||  song.singer.toLowerCase().indexOf(searchText) >= 0;
+      });
   }
 }
