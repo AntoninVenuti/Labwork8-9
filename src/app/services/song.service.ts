@@ -16,7 +16,7 @@ export class SongService {
 
   userId: string = null;
   songs: AngularFireList<Song> = null; // To Store FirebaseCollectionItems
-
+  selectedSong: Song; // Selected Song
   // Inject dependencies
   constructor(private fireDatabase: AngularFireDatabase,
               private userService: UserService) {
@@ -29,10 +29,16 @@ export class SongService {
       }
     });
   }
+  set_selectedSong(song: Song) {
+    this.selectedSong = song;
+  }
   get_SongList() {
     if (!this.userId) { return; } // Our Firabase rules set for user only;
     this.songs  = this.fireDatabase.list<Song>(`song-list`);
     return this.songs;
+  }
+  addSong(song: Song) {
+    this.fireDatabase.database.ref('song-list/' + this.userId).set(song);
   }
   get_SongInfo(songId: string) {
     // TODO

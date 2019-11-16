@@ -29,7 +29,7 @@ export class AddPage implements OnInit {
     if (this.song.title && this.song.title.length > 2 &&
       this.song.singer && this.song.singer.length > 2) {
       // Save song to firebase
-      this.songService.add_SongInfo(this.song);
+      this.songService.addSong(this.song);
       // Reset values after saving
       this.song = { title: '', released: 2019, singer: '', userId: '' };
       this.router.navigate(['tabs', 'songs']); // Redirect back to songs page

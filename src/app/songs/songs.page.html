@@ -31,10 +31,8 @@ Antonin Venuti 1902162
         </ion-label>
       </ion-item>
       <ion-item-options side="end">
-        <ion-item-option color="warning" routerLink="/edit-song" routerDirection="Forward">Update</ion-item-option>
-        <ion-item-option color="danger">Delete</ion-item-option>
-        <!-- <ion-item-option (click)="update(i,song)" color="warning">Update</ion-item-option>
-            <ion-item-option color="danger" (click)="delete(i,song)">Delete</ion-item-option> -->
+        <ion-item-option (click)="update(i,song)" color="warning">Update</ion-item-option>
+        <ion-item-option color="danger" (click)="delete(i,song)">Delete</ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
   </ion-list>

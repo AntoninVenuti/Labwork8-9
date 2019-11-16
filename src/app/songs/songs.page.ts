@@ -5,7 +5,9 @@ Antonin Venuti 1902162
 */
 
 import { Component, OnInit } from '@angular/core';
+import { IonItemSliding,NavController } from '@ionic/angular';
 import { SongService } from '../services/song.service'; // Import SongService
+
 
 @Component({
   selector: 'app-songs',
@@ -17,7 +19,7 @@ export class SongsPage implements OnInit {
   firebaseSongs: Song[] = null;
   searchText: string = null;
 
-  constructor(private songService: SongService) { }
+  constructor(private navController: NavController, private songService: SongService) { }
 
   ngOnInit() {
     // subscribe to valueChanges methon in SongList in songService
@@ -45,5 +47,14 @@ export class SongsPage implements OnInit {
       // Search both song title and singer and ignore case
         return song.title.toLowerCase().indexOf(searchText) >= 0 ||  song.singer.toLowerCase().indexOf(searchText) >= 0;
       });
+  }
+  update(item: IonItemSliding, song: Song) {
+    item.close();
+    this.songService.set_selectedSong(song);
+    this.navController.navigateForward('/edit-song');
+  }
+  delete(item: IonItemSliding, song: Song) {
+    item.close();
+    this.songService.delete_SongInfo(song);
   }
 }
