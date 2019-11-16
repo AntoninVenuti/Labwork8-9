@@ -17,7 +17,6 @@ export class EditPage implements OnInit {
   }
   update() {
     this.songService.update_SongInfo(this.song);
-    this.songService.selectedSong = null;
     this.navController.navigateBack('/tabs/songs');
   }
 

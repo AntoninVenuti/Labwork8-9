@@ -50,10 +50,11 @@ export class SongService {
   }
   update_SongInfo(song: Song) {
     if (!this.userId) { return; } // Our Firabase rules set for user only;
-    // TODO
+    this.fireDatabase.database.ref('song-list/' + this.userId).update(song);
+    this.selectedSong = null;
   }
   delete_SongInfo(song: Song) {
     if (!this.userId) { return; } // Our Firabase rules set for user only;
-    // TODO
+    this.fireDatabase.database.ref('song-list/' + this.userId).remove();
   }
 }
